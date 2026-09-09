@@ -137,6 +137,8 @@ html.light .mark,html.light .qcount,html.light .beat{opacity:0;pointer-events:no
   .hero{min-height:62svh}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none !important;transition-duration:.01ms !important}}
+
+.pmark{width:15px;height:15px;min-width:15px;object-fit:contain;display:inline-block;border:0 !important;border-radius:0 !important}
 </style>
 </head>
 <body>
@@ -155,7 +157,7 @@ html.light .mark,html.light .qcount,html.light .beat{opacity:0;pointer-events:no
 
 <a class="hud tl key" href="/"><img src="assets/avatar.webp" alt="" /><span data-name>Pons Store</span></a>
 <nav class="hud tr" id="nav">
-  <a class="key buy" data-link="pons" href="https://www.ponsfamily.com/launchpad"><span>Buy</span><svg><use href="#i-pons"/></svg></a>
+  <a class="key buy" data-link="pons" href="https://www.ponsfamily.com/launchpad"><span>Buy</span><img class="pmark" src="assets/pons-mark.png" alt="" /></a>
   <a class="key" data-link="x" href="https://x.com" aria-label="X"><svg><use href="#i-x"/></svg></a>
   <a class="key" href="/docs">Docs</a>
 </nav>
@@ -192,7 +194,7 @@ html.light .mark,html.light .qcount,html.light .beat{opacity:0;pointer-events:no
       <p class="ln">Bring nothing, take one thing, hand it to somebody who has less</p>
       <div class="ca" id="ca"><span class="lb">Contract</span><b id="caVal">soon</b><button class="cp" id="caCopy">Copy</button></div>
       <div class="btns">
-        <a class="key dark buy" data-link="pons" href="https://www.ponsfamily.com/launchpad">Buy on Pons<svg><use href="#i-pons"/></svg></a>
+        <a class="key dark buy" data-link="pons" href="https://www.ponsfamily.com/launchpad">Buy on Pons<img class="pmark" src="assets/pons-mark.png" alt="" /></a>
         <a class="key dark" data-link="x" href="https://x.com" aria-label="X"><svg><use href="#i-x"/></svg></a>
         <a class="key dark" href="/docs">Docs</a>
       </div>

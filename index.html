@@ -4,7 +4,7 @@
 <script src="config.js"></script>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<title>Pons Store</title>
+<title>Apple Store</title>
 <meta name="description" content="Four products, none of them new" />
 <link rel="icon" type="image/png" href="assets/favicon.png" />
 <link rel="apple-touch-icon" href="assets/apple-icon.png" />
@@ -83,12 +83,25 @@ html.light .mark,html.light .qcount,html.light .beat{opacity:0;pointer-events:no
 
 .runway{position:relative;z-index:1;pointer-events:none}
 
+/* ---------- apples: marks and headings laid out of apples ---------- */
+.am{width:16px;height:16px;color:#e8382f;vertical-align:-3px;flex:0 0 16px}
+.am.sm{width:13px;height:13px;vertical-align:-2px}
+.hud .am{color:#e8382f}
+.apples{display:block;line-height:0}
+.apples svg{display:block;height:auto}
+.apples.big{width:min(760px,100%);margin:0 auto}
+.apples.big + .apples.big{margin-top:14px}
+.apples.small{width:min(320px,60%);margin-bottom:clamp(16px,2.4vw,28px)}
+.mark .apples{width:min(420px,70vw)}
+.apples use{animation:ripen .9s cubic-bezier(.2,.8,.24,1) both;transform-box:fill-box;transform-origin:center}
+@keyframes ripen{from{opacity:0;transform:scale(.2)}to{opacity:1;transform:scale(1)}}
+
 /* ---------- inside ---------- */
 .inside{position:relative;z-index:3;background:var(--white);color:var(--ink)}
 .hero{position:relative;min-height:78svh;display:grid;place-content:center;justify-items:center;text-align:center;gap:14px;padding:clamp(70px,10vw,140px) var(--pad) clamp(40px,6vw,80px);overflow:hidden}
 .hero .bgin{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .hero .wash{position:absolute;inset:0;background:linear-gradient(180deg,rgba(251,251,253,.38),rgba(251,251,253,.8) 60%,var(--white))}
-.hero h2,.hero p{position:relative}
+.hero .apples,.hero p{position:relative}
 .hero h2{font-size:clamp(30px,6vw,74px);font-weight:700;letter-spacing:-.035em;line-height:1.02}
 .hero h2 em{font-style:normal;color:var(--grey)}
 .hero p{font-size:clamp(15px,1.7vw,20px);color:var(--grey);max-width:40ch}
@@ -155,14 +168,14 @@ html.light .mark,html.light .qcount,html.light .beat{opacity:0;pointer-events:no
   <div class="chill"></div>
 </div>
 
-<a class="hud tl key" href="/"><img src="assets/avatar.webp" alt="" /><span data-name>Pons Store</span></a>
+<a class="hud tl key" href="/"><svg class="am"><use href="#apple"/></svg><span data-name>Apple Store</span></a>
 <nav class="hud tr" id="nav">
   <a class="key buy" data-link="pons" href="https://www.ponsfamily.com/launchpad"><span>Buy</span><img class="pmark" src="assets/pons-mark.png" alt="" /></a>
   <a class="key" data-link="x" href="https://x.com" aria-label="X"><svg><use href="#i-x"/></svg></a>
   <a class="key" href="/docs">Docs</a>
 </nav>
 
-<div class="mark" id="mark"><h1>Pons Store</h1><p>Doors open when he says so</p></div>
+<div class="mark" id="mark"><h1 class="apples" data-apples="APPLE STORE" data-color="#fff"></h1><p>Doors open when he says so</p></div>
 <div class="qcount" id="qcount"><b id="qnum">0</b><span>Ahead of you</span></div>
 <div class="beat" id="beat">He high fives every one of them, including the ones who left and came back</div>
 
@@ -172,24 +185,24 @@ html.light .mark,html.light .qcount,html.light .beat{opacity:0;pointer-events:no
   <div class="hero">
     <img class="bgin" src="assets/inside.webp" alt="" />
     <div class="wash"></div>
-    <h2>Four products<br /><em>None of them new</em></h2>
+    <div class="apples big" data-apples="FOUR PRODUCTS" data-color="#e8382f"></div><div class="apples big" data-apples="NONE OF THEM NEW" data-color="#8a8a92"></div>
     <p>Same four since the fourteenth century, and the line still goes round the block</p>
   </div>
 
   <div class="rack">
-    <h3>In store today</h3>
+    <div class="apples small" data-apples="IN STORE TODAY" data-color="#2f7a4a"></div>
     <div class="cards">
-      <div class="card"><img src="assets/p1.webp" alt="" /><b>The Longbow</b><span class="sp">Ash and hemp, one draw weight</span><span class="pr">Taken from someone richer</span></div>
-      <div class="card"><img src="assets/p2.webp" alt="" /><b>The Cap</b><span class="sp">One size, one feather</span><span class="pr">It was a gift</span></div>
-      <div class="card"><img src="assets/p3.webp" alt="" /><b>The Arrow</b><span class="sp">Sold one at a time</span><span class="pr">Returned after use</span></div>
-      <div class="card"><img src="assets/p4.webp" alt="" /><b>The Quiver</b><span class="sp">Holds three, no more</span><span class="pr">Comes with the three</span></div>
+      <div class="card"><img src="assets/p1.webp" alt="" /><b><svg class="am sm"><use href="#apple"/></svg> Longbow Pro</b><span class="sp">Ash and hemp, one draw weight</span><span class="pr">Taken from someone richer</span></div>
+      <div class="card"><img src="assets/p2.webp" alt="" /><b><svg class="am sm"><use href="#apple"/></svg> Cap Air</b><span class="sp">One size, one feather</span><span class="pr">It was a gift</span></div>
+      <div class="card"><img src="assets/p3.webp" alt="" /><b><svg class="am sm"><use href="#apple"/></svg> Arrow mini</b><span class="sp">Sold one at a time</span><span class="pr">Returned after use</span></div>
+      <div class="card"><img src="assets/p4.webp" alt="" /><b><svg class="am sm"><use href="#apple"/></svg> Quiver Max</b><span class="sp">Holds three, no more</span><span class="pr">Comes with the three</span></div>
     </div>
   </div>
 </section>
 
 <section class="pickup">
   <div class="ticket">
-    <div class="hd"><b>Pick up in store</b><span>Ready today</span></div>
+    <div class="hd"><b><svg class="am sm"><use href="#apple"/></svg> Pick up in store</b><span>Ready today</span></div>
     <div class="bd">
       <p class="ln">Bring nothing, take one thing, hand it to somebody who has less</p>
       <div class="ca" id="ca"><span class="lb">Contract</span><b id="caVal">soon</b><button class="cp" id="caCopy">Copy</button></div>
@@ -201,11 +214,12 @@ html.light .mark,html.light .qcount,html.light .beat{opacity:0;pointer-events:no
     </div>
   </div>
 </section>
-<footer class="foot"><span data-name>Pons Store</span><span>Robinhood Chain · Pons</span></footer>
+<footer class="foot"><span><svg class="am sm"><use href="#apple"/></svg> <span data-name>Apple Store</span></span><span>Robinhood Chain · Pons</span></footer>
 
 <audio id="bgm" src="assets/music.mp3" loop preload="none"></audio>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="apple" viewBox="0 0 10 10"><path d="M5.15 2.55c.85-.75 2.25-.6 3.1.35 1.15 1.3.95 3.6-.45 5.45-.65.85-1.35 1.2-2.05.95-.3-.1-.5-.1-.8 0-.7.25-1.4-.1-2.05-.95C1.5 6.5 1.3 4.2 2.45 2.9c.85-.95 2.2-1.1 2.7-.35z" fill="currentColor"/><path d="M5.3 2.4c-.05-.9.5-1.6 1.45-1.85-.05.9-.6 1.6-1.45 1.85z" fill="#2f7a4a"/></symbol>
   <symbol id="i-pons" viewBox="0 0 64 64"><path d="M14 8h24c11 0 18 7 18 17s-7 17-18 17h-9v12a3 3 0 0 1-3 3H17a3 3 0 0 1-3-3V11a3 3 0 0 1 3-3z" fill="currentColor"/><path d="M29 20h8c4 0 6.5 2 6.5 5s-2.5 5-6.5 5h-8z" fill="#fff" opacity=".9"/></symbol>
   <symbol id="i-x" viewBox="0 0 24 24"><path fill="currentColor" d="M18.9 2H22l-7.1 8.1L23 22h-6.6l-5.2-6.8L5.3 22H2.1l7.6-8.7L1.5 2h6.7l4.7 6.2L18.9 2zm-1.1 18h1.8L7.3 3.9H5.4L17.8 20z"/></symbol>
 </svg>
@@ -214,6 +228,17 @@ html.light .mark,html.light .qcount,html.light .beat{opacity:0;pointer-events:no
 (function(){
   var S = window.SITE, CA = (S.CA||"SOON").trim(), HAS_CA = CA !== "SOON" && CA !== "";
   document.querySelectorAll('[data-name]').forEach(function(e){ e.textContent = S.NAME; });
+  /* headings are laid out of apples: the text is drawn tiny on a canvas, every lit pixel becomes one apple */
+  function appleText(el){
+    var text = el.dataset.apples, col = el.dataset.color || '#e8382f', c = document.createElement('canvas'), x = c.getContext('2d'), H = 13;
+    x.font = '900 ' + H + 'px "Arial Black", Inter, Arial, sans-serif'; var w = Math.ceil(x.measureText(text).width) + 2;
+    c.width = w; c.height = H + 4; x.font = '900 ' + H + 'px "Arial Black", Inter, Arial, sans-serif'; x.textBaseline = 'top'; x.fillStyle = '#000'; x.fillText(text, 1, 1);
+    var d = x.getImageData(0, 0, c.width, c.height).data, out = '', n = 0, minY = c.height, maxY = 0;
+    for(var yy = 0; yy < c.height; yy++) for(var xx = 0; xx < c.width; xx++){ if(d[(yy * c.width + xx) * 4 + 3] > 110){ out += '<use href="#apple" x="' + xx + '" y="' + yy + '" width="1.02" height="1.02" style="animation-delay:' + ((xx / c.width) * .8 + Math.random() * .2).toFixed(2) + 's"/>'; n++; minY = Math.min(minY, yy); maxY = Math.max(maxY, yy); } }
+    el.innerHTML = '<svg viewBox="0 ' + minY + ' ' + c.width + ' ' + (maxY - minY + 1.2) + '" role="img" aria-label="' + text + '" style="color:' + col + '">' + out + '</svg>';
+  }
+  document.querySelectorAll('[data-apples]').forEach(appleText);
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ document.querySelectorAll('[data-apples]').forEach(appleText); });
   document.title = S.NAME;
   document.querySelectorAll('[data-link="pons"]').forEach(function(a){ a.href = HAS_CA ? window.PONS_HOME + '/' + CA : window.PONS_HOME; a.target='_blank'; a.rel='noopener'; });
   document.querySelectorAll('[data-link="x"]').forEach(function(a){ a.href = S.X_URL || 'https://x.com'; a.target='_blank'; a.rel='noopener'; });

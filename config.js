@@ -2,8 +2,8 @@
 window.SITE = {
   CA:      "SOON",                       /* строго "SOON" до лаунча, потом 0x… (42 символа) */
   X_URL:   "https://x.com/soon",
-  NAME:    "Apple Store",
-  TICKER:  "$STORE",
+  NAME:    "Pons Apple Store",
+  TICKER:  "$PAP",
   TAGLINE: ""
 };
 window.PONS_HOME = "https://www.ponsfamily.com/launchpad";
